@@ -20,7 +20,19 @@ chrome.webRequest.onBeforeRequest.addListener(
 		else {
 			console.log("Attempting to intercept main-html.js");
 			settings["store.settings.intercept"] = "false";
-			return {redirectUrl:chrome.extension.getURL("main-html.js")};
+			
+			console.log("Getting original JS");
+			
+			var request = new XMLHttpRequest();
+			request.open("GET", main_html, false);  // Synchronous request for easier returning
+			request.send();
+			
+			if(request.status != 200) {
+				console.error("Failed to get original JS! Unknown results may occur.");
+				return;
+			}
+			console.log("Got original JS, redirecting");
+			return {redirectUrl:"data:application/javascript,"+encodeURIComponent(request.responseText)+"console.log('hello');"};
 		}
 	},
 	{urls: [main_html]},
