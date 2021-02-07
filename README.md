@@ -8,3 +8,4 @@ Status:
  - [ ] Connect to Websocket
  - [ ] Find triggers and splice in websocket code
  - [ ] Control triggers with settings
+ - [ ] Port to Firefox
