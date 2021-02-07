@@ -5,7 +5,7 @@ this.manifest = {
         {
             "tab": i18n.get("settings"),
             "group": "General",
-            "name": "disable",
+            "name": "disabled",
             "type": "checkbox",
             "label": "Disable"
         },
