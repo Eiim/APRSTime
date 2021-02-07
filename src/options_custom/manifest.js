@@ -16,6 +16,13 @@ this.manifest = {
             "type": "text",
 			"text": "Found in Livesplit Websocket layout settings",
             "label": "Local IP"
+        },
+		{
+            "tab": i18n.get("settings"),
+            "group": "Debugging",
+            "name": "intercept",
+            "type": "checkbox",
+            "label": "Intercept next main-html.js"
         }
     ],
     "alignment": []

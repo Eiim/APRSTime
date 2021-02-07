@@ -1,6 +1,6 @@
 {
   "name": "APRSTime",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "manifest_version": 2,
   "description": "An autosplitter for Agent P: Rebel Spy",
   "homepage_url": "https://github.com/eiim/APRSTime",
@@ -14,8 +14,7 @@
   "background": {
     "scripts": [
       "src/bg/background.js"
-    ],
-    "persistent": true
+    ]
   },
   "options_page": "src/options_custom/index.html",
   "browser_action": {
@@ -24,17 +23,22 @@
 	  "48": "icons/icon48.png",
 	  "96": "icons/icon96.png"
 	},
-    "default_title": "page action demo",
+    "default_title": "Open settings",
     "default_popup": "src/options_custom/index.html"
   },
   "permissions": [
-    "contentSettings",
-    "https://lol.disney.com/games/agent-p-rebel-spy*"
+    "webRequest",
+    "webRequestBlocking",
+    "*://lol.disney.com/games/agent-p-rebel-spy*",
+    "*://play.disney.com/html5/phf_spl_plt_agentprebelspy/targets/main-html.js"
+  ],
+  "web_accessible_resources": [
+    "main-html.js"
   ],
   "content_scripts": [
     {
       "matches": [
-        "https://lol.disney.com/games/agent-p-rebel-spy*"
+        "*://lol.disney.com/games/agent-p-rebel-spy*"
       ],
       "js": [
         "src/inject/inject.js"

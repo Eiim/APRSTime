@@ -10,13 +10,11 @@ var readyStateCheckInterval = setInterval(function() {
 			} else {
 				console.log("APRSTime enabled!")
 				chrome.runtime.sendMessage("ip", function(response) {
-					LSWSIP = response.slice(1, -1);
+					LSWSIP = response.slice(1, -1); // Fancy settings adds extra quotes here for some reason
 					console.log(LSWSIP);
 				});
 			}
 		});
-		
-		console.log("Hello. This message was sent from scripts/inject.js");
 
 	}
 }, 10);
