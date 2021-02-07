@@ -1,4 +1,20 @@
-/*
-// Add your own style rules here, not in css/main.css
-// or css/setting.css for easy updating reasons.
-*/
+body {
+	padding: 10px;
+	height: 400px;
+	width: 400px;
+}
+#sidebar {
+	display: none;
+}
+#content {
+	left: 0px;
+}
+.setting.group-name {
+	display: none;
+}
+.tab-content {
+	width: 380px;
+}
+input[type=text] {
+	width: 280px;
+}

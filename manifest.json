@@ -25,7 +25,7 @@
 	  "96": "icons/icon96.png"
 	},
     "default_title": "page action demo",
-    "default_popup": "src/page_action/page_action.html"
+    "default_popup": "src/options_custom/index.html"
   },
   "permissions": [
     "contentSettings",
